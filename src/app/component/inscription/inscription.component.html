@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <h4 class="modal-title">Inscription</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body bg-success">
+    <form class="">
+        <div class="row">
+            <div class="col-lg-6 form-group">
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" class="form-control">
+            </div>
+            <div class="col-lg-6 form-group">
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 form-group">
+                <select name="civilite" id="civilite" class="form-control">
+                    <option value="">Cilité</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+            </div>
+            <div class="col-lg-6 form-group">
+                <input type="date" name="naissance" id="naissance" placeholder="date de naissance" class="form-control">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12 form-group">
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 form-group">
+                <input type="text" name="cin" id="cin" placeholder="Numero CIN" class="form-control">
+            </div>
+            <div class="col-lg-6 form-group">
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Retapez votre mot de passe" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 form-group">
+                <button class="btn btn-primary btn-block">Validé</button>
+            </div>
+            <div class="col-lg-6 form-group">
+                <button class="btn btn-danger btn-block">Fermé</button>
+            </div>
+        </div>
+    </form>  
+</div>

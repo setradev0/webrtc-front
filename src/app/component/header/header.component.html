@@ -1,0 +1,36 @@
+<header class="bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Connexion <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="inscription()" >Inscription <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="search">
+        <div class="search-title">
+            <h2>Covoituré librement</h2>
+            <p>Lorem ipsum dolor sit</p>
+        </div>
+        <form class="input-group mb-3 form-search">
+            <div class="input-group-prepend">
+                <input type="text" class="form-control" id="depart" placeholder="Départ">
+            </div>
+            <div class="input-group-prepend">
+                <input type="arrive" class="form-control" id="arrive" placeholder="Lieu d'arrivée">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Go</button>
+        </form>
+    </div>
+</header>
