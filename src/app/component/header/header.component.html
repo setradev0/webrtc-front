@@ -1,11 +1,11 @@
 <header class="bg-success">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav id="nav-top" class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarText">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -28,7 +28,7 @@
                 <input type="text" class="form-control" id="depart" placeholder="Départ">
             </div>
             <div class="input-group-prepend">
-                <input type="arrive" class="form-control" id="arrive" placeholder="Lieu d'arrivée">
+                <input type="arrive" class="form-control" style="border-left: 1px solid black;" id="arrive" placeholder="Lieu d'arrivée">
             </div>
             <button type="submit" class="btn btn-primary mb-2">Go</button>
         </form>

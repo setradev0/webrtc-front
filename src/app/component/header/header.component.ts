@@ -1,6 +1,8 @@
 import { InscriptionComponent } from './../inscription/inscription.component';
 import { Component, OnInit } from '@angular/core';
-import {NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+declare let $: any;
 
 @Component({
   selector: 'app-header',
@@ -16,6 +18,13 @@ export class HeaderComponent implements OnInit {
 
   inscription() {
     const modalRef = this.modalService.open(InscriptionComponent);
+    if($(window).width() > 992) {
+      if($(window).scrollTop() > 40) {
+        $('#nav-top').addClass("fixed-top");
+      }
+    } else {
+      $('#navbar_top').removeClass("fixed-top");
+    }
   }
 
 }
