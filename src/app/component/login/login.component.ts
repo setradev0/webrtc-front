@@ -1,3 +1,5 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  login() {
+    console.log(this.form);
   }
 
 }

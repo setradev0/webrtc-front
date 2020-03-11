@@ -1,0 +1,8 @@
+.para {
+    padding: 6px;
+    box-shadow: 0px 1px 5px 8px black;
+}
+
+#carouselExampleIndicators img{
+    height: 400px;
+} 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg enable-background="new 0 0 30 30" version="1.1" viewBox="0 0 30 30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:url(#a);}
+	.st1{fill:#FFFFFF;}
+</style>
+<switch>
+	<foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/">
+	</foreignObject>
+	<g>
+				<radialGradient id="a" cx="14.141" cy="15.592" r="28.268" fx="2.2766" fy="15.773" gradientTransform="matrix(.6534 -.757 .6147 .5306 -4.683 18.024)" gradientUnits="userSpaceOnUse">
+				<stop stop-color="#F9ED32" offset="0"/>
+				<stop stop-color="#F8D939" offset=".054784"/>
+				<stop stop-color="#F5A54D" offset=".167"/>
+				<stop stop-color="#F0536C" offset=".3253"/>
+				<stop stop-color="#EE2A7B" offset=".3998"/>
+				<stop stop-color="#9E2AA7" offset=".5639"/>
+				<stop stop-color="#5B2ACD" offset=".7189"/>
+				<stop stop-color="#2A2AE8" offset=".8476"/>
+				<stop stop-color="#0B2AF9" offset=".9451"/>
+				<stop stop-color="#002AFF" offset="1"/>
+			</radialGradient>
+			<path class="st0" d="m24.3 14.8c0 5.5-4.5 10-10 10s-10-4.5-10-10 4.5-10 10-10 10 4.5 10 10z"/>
+					<path class="st1" d="m17 21.6h-5.4c-2.4 0-4.4-2-4.4-4.4v-4.8c0-2.4 2-4.4 4.4-4.4h5.4c2.4 0 4.4 2 4.4 4.4v4.8c0 2.4-2 4.4-4.4 4.4zm-5.4-12.6c-1.9 0-3.4 1.5-3.4 3.4v4.8c0 1.9 1.5 3.4 3.4 3.4h5.4c1.9 0 3.4-1.5 3.4-3.4v-4.8c0-1.9-1.5-3.4-3.4-3.4h-5.4z"/>
+					<path class="st1" d="m14.3 18.7c-2.1 0-3.9-1.7-3.9-3.9 0-2.1 1.7-3.9 3.9-3.9 2.1 0 3.9 1.7 3.9 3.9 0 2.1-1.8 3.9-3.9 3.9zm0-6.8c-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9-1.3-2.9-2.9-2.9z"/>
+					<path class="st1" d="m18.9 11c0 0.4-0.4 0.8-0.8 0.8s-0.8-0.4-0.8-0.8 0.4-0.8 0.8-0.8c0.5 0 0.8 0.4 0.8 0.8z"/>
+	</g>
+</switch>
+</svg>

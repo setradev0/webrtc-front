@@ -3,55 +3,55 @@
     <span aria-hidden="true" style="cursor: pointer;" (click)="activeModal.dismiss('Cross click')">&times;</span>
 </div>
 <div class="modal-body">
-    <form class="">
+    <form [formGroup]="form" (submit)="inscription()">
         <div class="row">
             <div class="col-lg-6 form-group">
-                <input type="text" name="nom" id="nom" placeholder="Votre nom" class="form-control">
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" class="form-control" formControlName="nom">
             </div>
             <div class="col-lg-6 form-group">
-                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" class="form-control">
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" class="form-control" formControlName="prenom">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 form-group">
-                <select name="civilite" id="civilite" class="form-control">
+                <select name="civilite" id="civilite" class="form-control" formControlName="civilite">
                     <option value="">Civilité</option>
                     <option value="homme">Homme</option>
                     <option value="femme">Femme</option>
                 </select>
             </div>
             <div class="col-lg-6 form-group">
-                <input type="date" name="naissance" id="naissance" placeholder="date de naissance" class="form-control">
+                <input type="date" name="date_naissance" id="date_naissance" placeholder="date de naissance" class="form-control" formControlName="date_naissance">
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-lg-12 form-group">
-                <input type="email" name="email" id="email" placeholder="Votre email" class="form-control">
+                <input type="email" name="email" id="email" placeholder="Votre email" class="form-control" formControlName="email">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 form-group">
-                <input type="password" name="password" id="password" placeholder="Votre mot de passe" class="form-control">
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe" class="form-control" formControlName="password">
             </div>
             <div class="col-lg-6 form-group">
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="Retapez votre mot de passe" class="form-control">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Retapez votre mot de passe" class="form-control" formControlName="confirm_password">
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-lg-12 form-group">
-                <input type="cin" name="confirm-password" id="cin" placeholder="Numero CIN" class="form-control">
+                <input type="cin" name="cin" id="cin" placeholder="Numero CIN" class="form-control" formControlName="cin">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 form-group">
-                <input type="text" name="telephone" id="telephone" placeholder="Telephone" class="form-control">
+                <input type="text" name="telephone" id="telephone" placeholder="Telephone" class="form-control" formControlName="telephone">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 form-group">
-                <button class="btn btn-primary btn-block">Validé</button>
+                <button class="btn btn-success btn-block">Validé</button>
             </div>
         </div>
     </form>  

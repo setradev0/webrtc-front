@@ -8,6 +8,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { LoginComponent } from './component/login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './component/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     HeaderComponent,
     InscriptionComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent],
