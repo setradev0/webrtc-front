@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
+import { HeaderAuthComponent } from './auth-component/header-auth/header-auth.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
     HeaderComponent,
     InscriptionComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderAuthComponent
   ],
   imports: [
     BrowserModule,
