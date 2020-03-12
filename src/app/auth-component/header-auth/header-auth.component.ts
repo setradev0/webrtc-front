@@ -1,4 +1,6 @@
+import { SessionService } from './../../shared/service/session.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-auth',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessionService: SessionService, private route: Router) { }
 
   ngOnInit() {
+  }
+
+  deconnexion() {
+    this.sessionService.cleanSession();
+    this.route.navigate(['/']);
   }
 
 }

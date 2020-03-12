@@ -1,3 +1,6 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div id="content">
+    <app-header *ngIf="!getCurrentUser()"></app-header>
+    <app-header-auth *ngIf="getCurrentUser()"></app-header-auth>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="!getCurrentUser()"></app-footer>
+</div>

@@ -2,6 +2,9 @@
 body {
     background-color: rgb(47, 47, 49);
     color: white;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 .container {
     margin-top: 100px;
@@ -23,4 +26,8 @@ body {
 
 .bg-dark {
     background-color: rgb(47, 47, 49);
+}
+
+.m-perso {
+    margin-top: 80px;
 }

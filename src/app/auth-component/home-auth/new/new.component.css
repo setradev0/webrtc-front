@@ -1,0 +1,9 @@
+.shadow {
+    box-shadow: 5px 10px 8px #a5a5a5;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
+}
