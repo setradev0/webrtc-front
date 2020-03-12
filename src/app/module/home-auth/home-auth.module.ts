@@ -1,3 +1,4 @@
+import { BoitDialogComponent } from './../../auth-component/boit-dialog/boit-dialog.component';
 import { DiscutionIntantaneComponent } from './../../auth-component/home-auth/discution-intantane/discution-intantane.component';
 import { NewComponent } from './../../auth-component/home-auth/new/new.component';
 import { HomeAuthComponent } from './../../auth-component/home-auth/home-auth.component';
@@ -11,7 +12,8 @@ import { HomeAuthRoutingModule } from './home-auth-routing.module';
   declarations: [
     HomeAuthComponent,
     NewComponent,
-    DiscutionIntantaneComponent
+    DiscutionIntantaneComponent,
+    BoitDialogComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { HomeAuthRoutingModule } from './home-auth-routing.module';
   exports: [
     HomeAuthComponent,
     NewComponent,
-    DiscutionIntantaneComponent
+    DiscutionIntantaneComponent,
+    BoitDialogComponent
   ]
 })
 export class HomeAuthModule { }

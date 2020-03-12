@@ -1,0 +1,23 @@
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
+}
+
+.dialog {
+    width: 300px;
+    height: 500px;
+}
+.card{
+    box-shadow: 1px 5px 8px #1d1d1d;
+    border: none;
+}
+.message {
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.096);
+}
+
+.boit {
+    background: rgb(58, 58, 58);
+}
