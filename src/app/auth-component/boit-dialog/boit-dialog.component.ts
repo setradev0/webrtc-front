@@ -1,3 +1,4 @@
+import { SocketService } from './../../shared/service/socket/socket.service';
 import { UserService } from './../../shared/service/user/user.service';
 import { SessionService } from './../../shared/service/session.service';
 import { ConversationService } from './../../shared/service/conversation/conversation.service';
@@ -11,17 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoitDialogComponent implements OnInit {
   formSearch: FormGroup;
-  private discution;
+  private discution: any [];
   constructor(
     private fb: FormBuilder, 
     private conversationService: ConversationService, 
-    private sessionService: SessionService) { }
+    private sessionService: SessionService,
+    private socketService: SocketService) { }
 
   ngOnInit() {
     this.formSearch = this.fb.group({
       message: ['', Validators.required]
     });
     this.getConversation();
+    this.socketService.connect(this.sessionService.getToken());
+    this.listenMessageSocket();
   }
 
   sendMessage() {
@@ -32,12 +36,11 @@ export class BoitDialogComponent implements OnInit {
     }
     this.formSearch.reset();
     this.conversationService.send(data).subscribe(res => {
-      console.log(res);
+      this.socketService.emit('message', res);
     });
   }
 
   getConversation() {
-    console.log('co');
     this.conversationService.getConversation({to_id: '5e6b3ea48806802ce4dffe6f', from_id: this.sessionService.getCurrentUser()._id}).subscribe(res => {
       this.discution = res;
       console.log(res);
@@ -54,5 +57,11 @@ export class BoitDialogComponent implements OnInit {
 
   get getToSend() {
     return '5e6b3ea48806802ce4dffe6f';
+  }
+
+  listenMessageSocket() {
+    this.socketService.listen('message').subscribe(res => {
+      this.discution.push(res);
+    });
   }
 }
