@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeAuthRoutingModule } from './home-auth-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { HomeAuthRoutingModule } from './home-auth-routing.module';
   imports: [
     CommonModule,
     HomeAuthRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     HomeAuthComponent,

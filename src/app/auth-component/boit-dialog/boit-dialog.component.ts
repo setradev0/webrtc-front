@@ -1,3 +1,7 @@
+import { UserService } from './../../shared/service/user/user.service';
+import { SessionService } from './../../shared/service/session.service';
+import { ConversationService } from './../../shared/service/conversation/conversation.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +10,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boit-dialog.component.css']
 })
 export class BoitDialogComponent implements OnInit {
-
-  constructor() { }
+  formSearch: FormGroup;
+  private discution;
+  constructor(
+    private fb: FormBuilder, 
+    private conversationService: ConversationService, 
+    private sessionService: SessionService) { }
 
   ngOnInit() {
+    this.formSearch = this.fb.group({
+      message: ['', Validators.required]
+    });
+    this.getConversation();
   }
 
+  sendMessage() {
+    let data = {
+      to_id: '5e6b3ea48806802ce4dffe6f',
+      from_id: this.sessionService.getCurrentUser()._id,
+      message: this.formSearch.value.message,
+    }
+    this.formSearch.reset();
+    this.conversationService.send(data).subscribe(res => {
+      console.log(res);
+    });
+  }
+
+  getConversation() {
+    console.log('co');
+    this.conversationService.getConversation({to_id: '5e6b3ea48806802ce4dffe6f', from_id: this.sessionService.getCurrentUser()._id}).subscribe(res => {
+      this.discution = res;
+      console.log(res);
+    })
+  }
+
+  get getDiscution() {
+    return this.discution;
+  }
+
+  get getUserId() {
+    return this.sessionService.getCurrentUser()._id;
+  }
+
+  get getToSend() {
+    return '5e6b3ea48806802ce4dffe6f';
+  }
 }

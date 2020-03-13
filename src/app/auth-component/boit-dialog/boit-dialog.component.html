@@ -6,25 +6,27 @@
         </div>
         <div class="card-body p-0" style="height: 350px;">
             <div class="boit w-100 h-75 p-3" style="overflow: auto;">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <img src="../../../../assets/img/unknow_profil.jpg" class="image" alt="pdp">
+                <div *ngFor="let discution of getDiscution">
+                    <div class="row" *ngIf="getToSend == discution.from_id">
+                        <div class="col-lg-2">
+                            <img src="../../../../assets/img/unknow_profil.jpg" class="image" alt="pdp">
+                        </div>
+                        <div class="col-lg-10">
+                            <p class="p-3 message ">{{discution.message}}</p>
+                        </div>
                     </div>
-                    <div class="col-lg-10">
-                        <p class="pl-3 message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, veritatis distinctio. Quas, consectetur reprehenderit unde optio minima eligendi voluptatibus laborum, perferendis itaque odio animi adipisci expedita voluptatum ducimus iure! Quis?</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
-                        <p class="pl-3 message bg-primary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit sit nam veritatis placeat alias delectus voluptate officia, dolore recusandae beatae doloremque culpa quae minima illum reprehenderit quisquam accusantium commodi nulla!</p>
+                    <div class="row" *ngIf="getUserId == discution.from_id">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-8">
+                            <p class="p-3 message bg-primary">{{discution.message}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="w-100 h-25">
-                <form>
+                <form [formGroup]="formSearch" (submit)="sendMessage()">
                     <div class="form-group">
-                        <input type="text" name="message" id="message" class="form-control" placeholder="Ecrivez un message...">
+                        <input type="text" name="message" id="message" class="form-control" formControlName="message" placeholder="Ecrivez un message...">
                         <button class="btn btn-primary mt-2">Send</button>
                     </div>
                 </form>
