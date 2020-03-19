@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   constructor(
-    public activeModal: NgbActiveModal, 
-    private fb: FormBuilder, 
+    public activeModal: NgbActiveModal,
+    private fb: FormBuilder,
     private loginService: LoginService,
     private sessionService: SessionService,
     private route: Router) { }
@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       this.loginService.signin(this.form.value).subscribe(res => {
-        if(res.user) {
+        console.log('eto');
+        if (res.user) {
           this.sessionService.setSessionUser(res.user);
           this.sessionService.setSessionToken(res.token);
           console.log(this.sessionService.getCurrentUser(), this.sessionService.getToken());

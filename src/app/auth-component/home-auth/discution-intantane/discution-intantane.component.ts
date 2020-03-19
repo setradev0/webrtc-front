@@ -1,15 +1,21 @@
-import { SessionService } from './../../../shared/service/session.service';
-import { UserService } from './../../../shared/service/user/user.service';
+import { SessionService } from '../../../shared/service/session.service';
+import { UserService } from '../../../shared/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
+import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import {BoitDialogComponent} from '../../boit-dialog/boit-dialog.component';
 
 @Component({
   selector: 'app-discution-intantane',
   templateUrl: './discution-intantane.component.html',
-  styleUrls: ['./discution-intantane.component.css']
+  styleUrls: ['./discution-intantane.component.css'],
+  providers: [MatBottomSheet]
 })
 export class DiscutionIntantaneComponent implements OnInit {
   private allUser;
-  constructor(private userService: UserService, private sessionService: SessionService) { }
+  constructor(
+    private userService: UserService,
+    private sessionService: SessionService,
+    private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
     this.getAllUser();
@@ -33,5 +39,8 @@ export class DiscutionIntantaneComponent implements OnInit {
     this.userService.addFriend(data).subscribe(res => {
       console.log(res);
     });
+  }
+  openDiscution() {
+    this.bottomSheet.open(BoitDialogComponent);
   }
 }

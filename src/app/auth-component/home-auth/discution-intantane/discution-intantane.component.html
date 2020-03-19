@@ -3,7 +3,8 @@
         <div class="list" *ngFor="let user of getAllUsers()">
             <img src="../../../../assets/img/unknow_profil.jpg" class="image" alt="pdp">
             <span class="pl-3"> {{user.prenom}} <span class="text-success" style="font-size: 3em;">.</span></span>
-            <button class="btn btn-primary" (click)="addFriend(user._id)">Add</button>
+            <!--<button class="btn btn-primary" (click)="addFriend(user._id)">Add</button>-->
+            <button class="btn btn-primary" (click)="openDiscution()">Conversation</button>
         </div>
     </div>
     <div class="search pr-2">

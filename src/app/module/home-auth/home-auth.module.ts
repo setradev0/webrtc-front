@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 
 import { HomeAuthRoutingModule } from './home-auth-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -20,12 +23,18 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CommonModule,
     HomeAuthRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   exports: [
     HomeAuthComponent,
     NewComponent,
     DiscutionIntantaneComponent,
+    BoitDialogComponent
+  ],
+  entryComponents: [
     BoitDialogComponent
   ]
 })

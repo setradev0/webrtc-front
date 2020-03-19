@@ -5,17 +5,19 @@ import { ConversationService } from './../../shared/service/conversation/convers
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
+declare let $: any;
 @Component({
   selector: 'app-boit-dialog',
   templateUrl: './boit-dialog.component.html',
   styleUrls: ['./boit-dialog.component.css']
 })
+
 export class BoitDialogComponent implements OnInit {
   formSearch: FormGroup;
   private discution: any [];
   constructor(
-    private fb: FormBuilder, 
-    private conversationService: ConversationService, 
+    private fb: FormBuilder,
+    private conversationService: ConversationService,
     private sessionService: SessionService,
     private socketService: SocketService) { }
 
@@ -26,6 +28,9 @@ export class BoitDialogComponent implements OnInit {
     this.getConversation();
     this.socketService.connect(this.sessionService.getToken());
     this.listenMessageSocket();
+    $(document).ready(() => {
+      $('#boit-scroll').animate({ scrollTop: $(document).height() }, 'slow');
+    });
   }
 
   sendMessage() {
@@ -41,10 +46,10 @@ export class BoitDialogComponent implements OnInit {
   }
 
   getConversation() {
+    // tslint:disable-next-line:max-line-length
     this.conversationService.getConversation({to_id: '5e6b3ea48806802ce4dffe6f', from_id: this.sessionService.getCurrentUser()._id}).subscribe(res => {
       this.discution = res;
-      console.log(res);
-    })
+    });
   }
 
   get getDiscution() {
@@ -62,6 +67,7 @@ export class BoitDialogComponent implements OnInit {
   listenMessageSocket() {
     this.socketService.listen('message').subscribe(res => {
       this.discution.push(res);
+      $('#boit-scroll').animate({ scrollTop: $(document).height() }, 'slow');
     });
   }
 }

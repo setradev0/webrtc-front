@@ -1,3 +1,10 @@
 #nav-top {
     background-color: rgb(0, 0, 0);
 }
+
+.btn-perso {
+  margin-right: 25px;
+}
+mat-icon:hover {
+  cursor: pointer;
+}
