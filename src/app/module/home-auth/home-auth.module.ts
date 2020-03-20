@@ -16,8 +16,7 @@ import {MatBadgeModule} from '@angular/material/badge';
   declarations: [
     HomeAuthComponent,
     NewComponent,
-    DiscutionIntantaneComponent,
-    BoitDialogComponent
+    DiscutionIntantaneComponent
   ],
   imports: [
     CommonModule,
@@ -31,11 +30,10 @@ import {MatBadgeModule} from '@angular/material/badge';
   exports: [
     HomeAuthComponent,
     NewComponent,
-    DiscutionIntantaneComponent,
-    BoitDialogComponent
+    DiscutionIntantaneComponent
   ],
   entryComponents: [
-    BoitDialogComponent
+
   ]
 })
 export class HomeAuthModule { }

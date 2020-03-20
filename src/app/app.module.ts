@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {TokenInterceptor} from './shared/helpers/token.interceptor';
+import {BoitDialogComponent} from './auth-component/boit-dialog/boit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {TokenInterceptor} from './shared/helpers/token.interceptor';
     InscriptionComponent,
     LoginComponent,
     FooterComponent,
-    HeaderAuthComponent
+    HeaderAuthComponent,
+    BoitDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import {TokenInterceptor} from './shared/helpers/token.interceptor';
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    InscriptionComponent
+    InscriptionComponent,
+    BoitDialogComponent
   ]
 })
 export class AppModule { }

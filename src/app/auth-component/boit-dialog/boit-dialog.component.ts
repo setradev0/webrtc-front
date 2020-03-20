@@ -3,7 +3,8 @@ import { UserService } from './../../shared/service/user/user.service';
 import { SessionService } from './../../shared/service/session.service';
 import { ConversationService } from './../../shared/service/conversation/conversation.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 
 declare let $: any;
 @Component({
@@ -13,13 +14,15 @@ declare let $: any;
 })
 
 export class BoitDialogComponent implements OnInit {
+  @Input() id;
   formSearch: FormGroup;
   private discution: any [];
   constructor(
     private fb: FormBuilder,
     private conversationService: ConversationService,
     private sessionService: SessionService,
-    private socketService: SocketService) { }
+    private socketService: SocketService,
+    private activeModal: NgbActiveModal) { }
 
   ngOnInit() {
     this.formSearch = this.fb.group({
@@ -35,7 +38,7 @@ export class BoitDialogComponent implements OnInit {
 
   sendMessage() {
     let data = {
-      to_id: '5e6b3ea48806802ce4dffe6f',
+      to_id: this.id,
       from_id: this.sessionService.getCurrentUser()._id,
       message: this.formSearch.value.message,
     }
@@ -47,7 +50,7 @@ export class BoitDialogComponent implements OnInit {
 
   getConversation() {
     // tslint:disable-next-line:max-line-length
-    this.conversationService.getConversation({to_id: '5e6b3ea48806802ce4dffe6f', from_id: this.sessionService.getCurrentUser()._id}).subscribe(res => {
+    this.conversationService.getConversation({to_id: this.id, from_id: this.sessionService.getCurrentUser()._id}).subscribe(res => {
       this.discution = res;
     });
   }
@@ -61,8 +64,9 @@ export class BoitDialogComponent implements OnInit {
   }
 
   get getToSend() {
-    return '5e6b3ea48806802ce4dffe6f';
+    return this.id;
   }
+
 
   listenMessageSocket() {
     this.socketService.listen('message').subscribe(res => {

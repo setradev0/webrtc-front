@@ -10,11 +10,10 @@ export class SocketService {
   private socket;
   constructor() { }
 
-  connect(token) {
+  connect(t) {
     this.socket = io.connect((environment as any).urlSocketIo);
     this.socket.on('connect', function() {
-      console.log('connect io');
-      //this.emit('authenticate', {token: token});
+      this.emit('authenticate', { token: t});
     });
   }
 
